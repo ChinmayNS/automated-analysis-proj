@@ -1,12 +1,13 @@
 📊 Media Dataset Analysis Report
+
 1. Dataset Overview
 Total Entries: 2,652
 Missing Data:
 date: 99 missing
 by: 262 missing
+
 2. Most Common Languages & Types
 Languages:
-
 English (1,306), Tamil (718), Telugu (338), Hindi (251), Malayalam (19)
 Types:
 
@@ -15,6 +16,7 @@ Fiction (196)
 TV Series (112)
 Non-fiction (60)
 Videos, Short Films (Few Entries)
+
 3. Rating Insights
 Overall Rating Average: 3.05
 Quality Rating Average: 3.21
@@ -22,6 +24,7 @@ Repeatability Average: 1.49
 Correlation:
 quality and overall ratings show strong correlation (0.76)
 repeatability has low correlation with both quality and overall
+
 4. Top & Bottom Rated Media
 📈 Top Rated (Overall Rating = 5)
 
@@ -37,6 +40,7 @@ Agilan (Tamil)
 Kaviyyan (Tamil)
 Dhadha (Telugu)
 Vinaya Vidheya Rama (Telugu)
+
 5. Outliers & Anomalies
 No extreme outliers detected in ratings.
 

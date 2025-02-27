@@ -26,15 +26,15 @@ quality and overall ratings show strong correlation (0.76)
 repeatability has low correlation with both quality and overall
 
 4. Top & Bottom Rated Media
+   
 📈 Top Rated (Overall Rating = 5)
-
 Attack on Titan (Japanese)
 Thillu Mullu (Tamil)
 Inside Man (English)
 Fidaa (Telugu)
 Sagara Sangaman (Telugu)
-📉 Lowest Rated (Overall Rating = 1)
 
+📉 Lowest Rated (Overall Rating = 1)
 Bro (Telugu)
 Agilan (Tamil)
 Kaviyyan (Tamil)
@@ -45,5 +45,6 @@ Vinaya Vidheya Rama (Telugu)
 No extreme outliers detected in ratings.
 
 📊 Visualizations (Saved as PNGs)
+
 📌 Overall Rating Distribution: /mnt/data/overall_ratings_distribution.png
 📌 Correlation Matrix: /mnt/data/correlation_matrix.png

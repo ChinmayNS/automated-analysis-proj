@@ -27,7 +27,8 @@ def analyze_data(df):
     summary = df.describe().to_string()
     missing_values = df.isnull().sum().to_string()
     correlations = df.corr()
-    return summary, missing_values, correlations
+    outliers = detect_outliers(df)
+    return summary, missing_values, correlations, outliers
 
 def detect_outliers(df):
     """Detect outliers using Z-score"""
@@ -82,21 +83,20 @@ def save_results(dataset_name):
     """Move README and images to the correct directory"""
     os.makedirs(dataset_name, exist_ok=True)
     os.rename("README.md", f"{dataset_name}/README.md")
-    for img in ["correlation_matrix.png", "col1_distribution.png", "col2_distribution.png", "col1_countplot.png", "col2_countplot.png"]:
-        if os.path.exists(img):
+    for img in os.listdir():
+        if img.endswith(".png"):
             os.rename(img, f"{dataset_name}/{img}")
 
 def main():
     df = load_data(filename)
-    summary, missing_values, correlations = analyze_data(df)
-    outliers = detect_outliers(df)
+    summary, missing_values, correlations, outliers = analyze_data(df)
     visualize_data(df)
     insights = get_ai_insights(summary, missing_values, outliers, df)
     generate_readme(insights)
     
     dataset_name = os.path.splitext(os.path.basename(filename))[0]
     save_results(dataset_name)
-    
+
     print("Analysis complete. Check README.md and PNG files.")
 
 if __name__ == "__main__":

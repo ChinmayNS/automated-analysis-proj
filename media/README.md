@@ -46,5 +46,5 @@ No extreme outliers detected in ratings.
 
 📊 Visualizations (Saved as PNGs)
 
-📌 Overall Rating Distribution: /mnt/data/overall_ratings_distribution.png
+📌 Overall Rating Distribution: /mnt/data/overall_distribution.png
 📌 Correlation Matrix: /mnt/data/correlation_matrix.png

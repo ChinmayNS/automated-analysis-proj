@@ -14,12 +14,13 @@ if len(sys.argv) < 2:
 filename = sys.argv[1]
 
 def load_data(file):
-    """Load the CSV file into a DataFrame"""
+    """Load the CSV file from the 'data/' directory into a DataFrame"""
+    data_path = os.path.join("data", file)  # Read from 'data/' folder
     try:
-        df = pd.read_csv(file)
+        df = pd.read_csv(data_path)
         return df
     except Exception as e:
-        print(f"Error loading dataset: {e}")
+        print(f"Error loading dataset from {data_path}: {e}")
         sys.exit(1)
 
 def analyze_data(df):
@@ -88,16 +89,14 @@ def save_results(dataset_name):
             os.rename(img, f"{dataset_name}/{img}")
 
 def main():
+    dataset_name = os.path.splitext(os.path.basename(filename))[0]  # Extract filename without extension
     df = load_data(filename)
     summary, missing_values, correlations, outliers = analyze_data(df)
     visualize_data(df)
     insights = get_ai_insights(summary, missing_values, outliers, df)
     generate_readme(insights)
-    
-    dataset_name = os.path.splitext(os.path.basename(filename))[0]
     save_results(dataset_name)
-
-    print("Analysis complete. Check README.md and PNG files.")
+    print(f"Analysis complete. Check {dataset_name}/README.md and PNG files.")
 
 if __name__ == "__main__":
     main()
